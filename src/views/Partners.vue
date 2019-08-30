@@ -1,8 +1,22 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div v-for="(partner, index) in partners" :key="partner.id" class="partner">
-        <img v-if="index <5 " :key="partner.id" :src="partner.image_url" :alt="partner.title" />
+  <div class="partners">
+    <div class="container">
+      <h1 class="partners-title">Parceiros</h1>
+      <div class="row">
+        <ul class="partners-list">
+          <li
+            class="partners-item"
+            v-for="(partner, index) in partners"
+            :key="partner.id"
+          >
+            <img
+              v-if="index < 5"
+              :key="partner.id"
+              :src="partner.image_url"
+              :alt="partner.title"
+            />
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -23,7 +37,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.partner {
-  margin-right: 5rem;
+.partners {
+  background-color: #f4f4f4;
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
+
+  .partners-title {
+    text-transform: uppercase;
+    color: #403225;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .partners-list {
+    display: flex;
+
+    @media (max-width: 768px) {
+      overflow-x: scroll;
+    }
+  }
+  .partners-item {
+    list-style-type: none;
+    align-self: center;
+    margin-right: 5rem;
+  }
 }
 </style>

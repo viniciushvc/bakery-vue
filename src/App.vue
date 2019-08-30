@@ -5,10 +5,10 @@
     <Products />
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-8">
           <About />
         </div>
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
           <News />
         </div>
       </div>
@@ -18,7 +18,7 @@
     <Footer />
   </div>
 </template>
- 
+
 <script>
 import Header from './components/Header'
 import Banner from './views/Banner'
