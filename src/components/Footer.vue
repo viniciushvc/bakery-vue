@@ -59,19 +59,19 @@
 </template>
 
 <script>
-import TwitterIcon from '../components/icons/Twitter'
-import FacebookIcon from '../components/icons/Facebook'
+import TwitterIcon from "../components/icons/Twitter";
+import FacebookIcon from "../components/icons/Facebook";
 
 export default {
   components: {
     TwitterIcon,
-    FacebookIcon,
-  },
-}
+    FacebookIcon
+  }
+};
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/align.scss';
+@import "@/styles/align.scss";
 
 footer {
   background-color: #403225;
