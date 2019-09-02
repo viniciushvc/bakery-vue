@@ -81,7 +81,7 @@ export default {
     top: calc(400px - 140px);
     text-align: center;
 
-    @media #{$media-sm} {
+    @media #{$media-sm-max} {
       top: 350px;
     }
 

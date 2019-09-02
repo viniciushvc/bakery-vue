@@ -52,7 +52,7 @@ export default {
   padding: 2.5rem 2rem;
   background-color: #fafafa;
 
-  @media #{$media-sm} {
+  @media #{$media-md-max} {
     padding: 1rem;
     margin-top: 2.5rem;
   }

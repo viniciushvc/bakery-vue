@@ -53,7 +53,7 @@ export default {
 <style scoped lang="scss">
 @import '../styles/variables';
 
-@media #{$media-sm} {
+@media #{$media-md-max} {
   .container {
     padding: 0;
   }
@@ -62,15 +62,18 @@ export default {
 #recipes {
   margin: -100px 0 5rem 0;
 
-  @media #{$media-sm} {
+  @media #{$media-lg-max} {
     margin-top: 0;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 
   .recipe-list {
     display: flex;
+    background-color: #ddd;
+    min-height: 270px;
 
     .recipe-item {
+      cursor: pointer;
       position: relative;
       color: #ddd;
       transition: 0.3s;
@@ -79,14 +82,17 @@ export default {
         .recipe-image {
           filter: grayscale(0%);
         }
+
+        .recipes-title {
+          color: #fff;
+        }
       }
 
       .recipe-image {
-        width: 100%;
+        width: auto;
 
-        @media #{$media-sm} {
+        @media #{$media-sm-max} {
           font-size: 14px;
-          width: auto;
         }
         filter: grayscale(90%);
       }
@@ -100,10 +106,6 @@ export default {
         text-align: center;
         text-transform: uppercase;
         text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.56);
-      }
-
-      &:hover {
-        color: #fff;
       }
     }
   }

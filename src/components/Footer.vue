@@ -1,117 +1,183 @@
 <template>
-  <div>
-    <footer>
-      <div class="container">
-        <div class="row center">
-          <div class="col-12 col-md-4">
-            <div class="footer-social">
-              <div class="row">
-                <div class="col-12">
-                  <img
-                    class="footer-logo"
-                    src="../assets/images/logo.svg"
-                    alt="logo"
-                    v-scroll-to="'#home'"
-                  />
-                </div>
-              </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="footer-social">
+            <img
+              class="social-logo"
+              src="../assets/images/logo.svg"
+              alt="logo"
+              v-scroll-to="'#home'"
+            />
 
+            <div class="social-icons">
               <TwitterIcon
                 color="#a67b52"
                 size="30"
                 href="https://twitter.com/owinteractive"
               />
-
               <FacebookIcon
                 color="#a67b52"
                 size="30"
                 href="https://pt-br.facebook.com/owinteractive"
               />
             </div>
-
-            <div class="icon facebook"></div>
-          </div>
-          <div class="col-4">
-            <div class="footer-links">
-              <a href="/">Home</a>
-              <a href="#about">Sobre</a>
-              <a href="#recipes">Receitas</a>
-              <a href="#news">Noticias</a>
-              <a href="#contact">Contato</a>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 footer-contact left">
-            <div>
-              <strong>Contato</strong>
-              <p>(99)9999-9999 | (99)9999-9999</p>
-            </div>
-
-            <div>
-              <strong>Localização</strong>
-              <p>Nam porttitor diam in eleifend fringilla, 3180</p>
-            </div>
           </div>
         </div>
-        <p class="copyright">&copy; Bakery 2017. Todos direitos reservados.</p>
+
+        <div class="col-lg-4 border-left d-only">
+          <ul class="footer-links">
+            <li class="links-item" v-scroll-to="'#home'">
+              Home
+            </li>
+            <li class="links-item" v-scroll-to="'#about'">
+              Sobre
+            </li>
+            <li class="links-item" v-scroll-to="'#recipes'">
+              Receitas
+            </li>
+            <li class="links-item" v-scroll-to="'#news'">
+              Noticias
+            </li>
+            <li class="links-item" v-scroll-to="'#contact'">
+              Contato
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 footer-contact border-left">
+          <div class="contact-item">
+            <MapIcon color="#675749" size="17" />
+            <strong>Contato</strong>
+            <p>(99)9999-9999 | (99)9999-9999</p>
+          </div>
+
+          <div class="contact-item">
+            <PhoneIcon color="#675749" size="15" />
+            <strong>Localização</strong>
+            <p>Nam porttitor diam in eleifend fringilla, 3180</p>
+          </div>
+        </div>
       </div>
-    </footer>
-  </div>
+      <p class="copyright">&copy; Bakery 2017. Todos direitos reservados.</p>
+    </div>
+  </footer>
 </template>
 
 <script>
 import TwitterIcon from '../components/icons/Twitter'
 import FacebookIcon from '../components/icons/Facebook'
+import MapIcon from '../components/icons/Map'
+import PhoneIcon from '../components/icons/Phone'
 
 export default {
   components: {
     TwitterIcon,
     FacebookIcon,
+    MapIcon,
+    PhoneIcon,
   },
 }
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/align';
+@import '../styles/variables';
 
 footer {
   background-color: #403225;
   color: #fff;
-  padding: 2rem;
+  padding: 30px;
 
   .footer-social {
-    .footer-logo {
+    display: block;
+
+    .social-logo {
+      width: 100%;
       height: 100px;
       cursor: pointer;
-      margin: 2rem;
+      margin-bottom: 20px;
     }
 
-    a {
-      margin-right: 2rem;
+    .social-icons {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+
+      a:nth-child(1) {
+        margin-right: 30px;
+      }
+    }
+  }
+  @media #{$media-md-max} {
+    .d-only {
+      display: none;
     }
   }
 
   .footer-links {
-    a {
+    text-align: center;
+
+    .links-item {
+      cursor: pointer;
       display: block;
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
       color: currentColor;
       font-size: 14px;
       text-decoration: none;
+
+      &:hover {
+        color: #a67b52;
+      }
     }
   }
 
   .footer-contact {
-    strong {
-      margin-bottom: 0.5rem;
+    font-size: 13px;
+
+    @media #{$media-sm-max} {
+      text-align: center;
     }
-    p {
-      margin-bottom: 3rem;
+
+    .contact-item {
+      text-align: left;
+
+      @media #{$media-sm-min} {
+        margin-left: 30px;
+      }
+
+      span {
+        margin-right: 10px;
+        position: relative;
+        top: 5px;
+      }
+
+      strong {
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-top: 7px;
+        margin-bottom: 50px;
+        margin-left: 25px;
+      }
     }
   }
 
   .copyright {
-    margin-top: 4rem;
+    font-size: 12px;
+    margin-top: 30px;
+
+    @media #{$media-sm-max} {
+      text-align: center;
+    }
+  }
+
+  @media #{$media-sm-min} {
+    .border-left {
+      border-left: 1px solid #867f79;
+    }
   }
 }
 </style>

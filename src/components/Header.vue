@@ -29,6 +29,9 @@
             <li v-scroll-to="{ el: '#contacts', onStart: hideMenu }">
               Contato
             </li>
+            <li class="links-icon">
+              <SearchIcon color="#333" size="20" />
+            </li>
           </ul>
         </div>
       </div>
@@ -37,7 +40,12 @@
 </template>
 
 <script>
+import SearchIcon from '../components/icons/Search'
+
 export default {
+  components: {
+    SearchIcon,
+  },
   data() {
     return {
       mobileMenu: false,
@@ -61,7 +69,7 @@ header {
   padding: 1.5rem;
   background-color: #fff;
 
-  @media #{$media-sm} {
+  @media #{$media-sm-max} {
     padding: 1rem;
     position: sticky;
     top: 0;
@@ -78,7 +86,7 @@ header {
       cursor: pointer;
       height: 100px;
 
-      @media #{$media-sm} {
+      @media #{$media-sm-max} {
         height: 50px;
       }
     }
@@ -86,7 +94,7 @@ header {
     .mobile-toggle {
       display: none;
 
-      @media #{$media-sm} {
+      @media #{$media-sm-max} {
         display: block;
       }
     }
@@ -96,7 +104,7 @@ header {
       align-self: center;
       margin-left: auto;
 
-      @media #{$media-sm} {
+      @media #{$media-sm-max} {
         margin-top: 0;
       }
 
@@ -106,7 +114,7 @@ header {
         color: #333;
         text-transform: uppercase;
         font-size: 14px;
-        margin-left: 5rem;
+        padding: 5px 30px;
         text-decoration: none;
         font-weight: 700;
 
@@ -114,13 +122,32 @@ header {
           color: #a67b52;
         }
 
-        @media #{$media-sm} {
+        @media #{$media-md-max} {
+          font-size: 13px;
+          padding: 5px 15px;
+        }
+
+        @media #{$media-sm-max} {
           margin-left: -200px;
           padding: 16px;
           text-decoration: none;
           font-size: 25px;
           display: block;
           transition: 0.3s;
+        }
+      }
+
+      .links-icon {
+        border-left: 1px solid #a8a8a8;
+        position: relative;
+        span {
+          top: 2px;
+        }
+      }
+
+      @media #{$media-sm-max} {
+        .links-icon {
+          display: none;
         }
       }
     }
@@ -135,7 +162,7 @@ header {
     span {
       display: block;
       position: absolute;
-      height: 5px;
+      height: 4px;
       width: 100%;
       background-color: #403225;
       border-radius: 9px;
@@ -174,7 +201,7 @@ header {
   }
 
   .sidenav {
-    @media #{$media-sm} {
+    @media #{$media-sm-max} {
       margin-top: 82px;
       height: 100%;
       width: 0;

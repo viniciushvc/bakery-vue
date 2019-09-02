@@ -57,7 +57,7 @@ export default {
       font-weight: 700;
       margin-bottom: 1.5rem;
 
-      @media #{$media-sm} {
+      @media #{$media-sm-max} {
         margin-top: 1.5rem;
       }
     }
@@ -72,7 +72,7 @@ export default {
     height: 100%;
     padding-right: 4rem;
 
-    @media #{$media-sm} {
+    @media #{$media-sm-max} {
       margin-right: 0;
       width: 100%;
       padding: 0;

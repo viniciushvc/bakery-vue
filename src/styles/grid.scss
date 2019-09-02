@@ -6,11 +6,6 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-
-    @media #{$media-sm} {
-      padding-right: 10px;
-      padding-left: 10px;
-    }
   }
   
   .row {
