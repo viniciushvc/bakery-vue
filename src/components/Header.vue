@@ -1,30 +1,36 @@
 <template>
   <header>
-    <div class="header-menu">
-      <img
-        class="header-logo"
-        src="../assets/images/logo.svg"
-        alt="Bakery logo"
-        v-scroll-to="{ el: '#home', onStart: hideMenu }"
-      />
+    <div class="container">
+      <div class="header-menu">
+        <img
+          class="header-logo"
+          src="../assets/images/logo.svg"
+          alt="Bakery logo"
+          v-scroll-to="{ el: '#home', onStart: hideMenu }"
+        />
 
-      <div class="mobile-toggle" @click="toggleMenu">
-        <div class="mobile-toggle" :class="{ open: mobileMenu }">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="mobile-toggle" @click="toggleMenu">
+          <div class="mobile-toggle" :class="{ open: mobileMenu }">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </div>
 
-      <div class="sidenav" :class="{ open: mobileMenu }">
-        <ul class="header-links">
-          <li v-scroll-to="{ el: '#home', onStart: hideMenu }">Home</li>
-          <li v-scroll-to="{ el: '#about', onStart: hideMenu }">Sobre</li>
-          <li v-scroll-to="{ el: '#recipes', onStart: hideMenu }">Receitas</li>
-          <li v-scroll-to="{ el: '#news', onStart: hideMenu }">Notícias</li>
-          <li v-scroll-to="{ el: '#contacts', onStart: hideMenu }">Contato</li>
-        </ul>
+        <div class="sidenav" :class="{ open: mobileMenu }">
+          <ul class="header-links">
+            <li v-scroll-to="{ el: '#home', onStart: hideMenu }">Home</li>
+            <li v-scroll-to="{ el: '#about', onStart: hideMenu }">Sobre</li>
+            <li v-scroll-to="{ el: '#recipes', onStart: hideMenu }">
+              Receitas
+            </li>
+            <li v-scroll-to="{ el: '#news', onStart: hideMenu }">Notícias</li>
+            <li v-scroll-to="{ el: '#contacts', onStart: hideMenu }">
+              Contato
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -63,7 +69,6 @@ header {
   }
 
   .header-menu {
-    max-width: 1140px;
     display: flex;
     width: 100%;
     align-items: center;
