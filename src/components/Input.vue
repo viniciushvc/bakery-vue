@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  name: 'Input',
   props: {
     id: {
       type: String,
@@ -53,6 +54,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '../styles/form.scss';
-</style>
+<style scoped lang="scss" src="../styles/form.scss" />

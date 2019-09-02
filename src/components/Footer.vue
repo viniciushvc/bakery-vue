@@ -31,7 +31,7 @@
 
             <div class="icon facebook"></div>
           </div>
-          <div class="col-4 align-self-center d-none d-md-block">
+          <div class="col-4">
             <div class="footer-links">
               <a href="/">Home</a>
               <a href="#about">Sobre</a>
@@ -40,7 +40,7 @@
               <a href="#contact">Contato</a>
             </div>
           </div>
-          <div class="col-12 col-md-4 footer-contact left align-self-center">
+          <div class="col-12 col-md-4 footer-contact left">
             <div>
               <strong>Contato</strong>
               <p>(99)9999-9999 | (99)9999-9999</p>
@@ -59,19 +59,19 @@
 </template>
 
 <script>
-import TwitterIcon from "../components/icons/Twitter";
-import FacebookIcon from "../components/icons/Facebook";
+import TwitterIcon from '../components/icons/Twitter'
+import FacebookIcon from '../components/icons/Facebook'
 
 export default {
   components: {
     TwitterIcon,
-    FacebookIcon
-  }
-};
+    FacebookIcon,
+  },
+}
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/align.scss";
+@import '@/styles/align';
 
 footer {
   background-color: #403225;
@@ -82,7 +82,6 @@ footer {
     .footer-logo {
       height: 100px;
       cursor: pointer;
-
       margin: 2rem;
     }
 

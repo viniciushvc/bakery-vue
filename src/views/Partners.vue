@@ -52,15 +52,12 @@ export default {
 
   .partners-list {
     display: flex;
-
-    @media (max-width: 768px) {
-      overflow-x: scroll;
-    }
+    overflow-x: scroll;
   }
   .partners-item {
     list-style-type: none;
     align-self: center;
-    margin-right: 5rem;
+    margin: 0 5rem;
   }
 }
 </style>

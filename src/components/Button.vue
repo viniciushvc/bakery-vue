@@ -1,6 +1,7 @@
 <template>
   <component :is="type" :href="href">
-    <slot />
+    {{ title }}
+    <slot></slot>
   </component>
 </template>
 
@@ -8,6 +9,10 @@
 export default {
   props: {
     href: {
+      type: String,
+      default: null,
+    },
+    title: {
       type: String,
       default: null,
     },
@@ -51,5 +56,25 @@ button {
   padding: 0;
   color: #a67b52;
   background-color: transparent;
+
+  &:hover {
+    margin-left: 15px;
+  }
+
+  .arrow-right {
+    display: inline-block;
+    background-image: url('../assets/images/right-arrow.svg');
+    position: relative;
+    top: 3px;
+    margin-left: 7px;
+    height: 15px;
+    width: 15px;
+    transition: 0.4s;
+  }
+  &:hover {
+    .arrow-right {
+      margin-left: 15px;
+    }
+  }
 }
 </style>

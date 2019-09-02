@@ -6,7 +6,7 @@
       :key="banner.id"
     >
       <img
-        :class="{ 'd-none': position !== index }"
+        :class="{ show: position === index }"
         class="banner-item"
         :key="banner.id"
         :src="banner.image_url"
@@ -46,20 +46,31 @@ export default {
       } else {
         this.position = 0
       }
-    }, 4000)
+    }, 6000)
   },
 }
 </script>
 
 <style scoped lang="scss">
+@import '../styles/variables';
+
 .banners {
   position: relative;
+  height: 400px;
+  background-color: #ddd;
 
   .banner-list {
     .banner-item {
       width: 100%;
-      height: 50vh;
+      height: 400px;
       object-fit: cover;
+      display: none;
+    }
+
+    .show {
+      display: block;
+      animation-name: fadein;
+      animation-duration: 0.8s;
     }
   }
 
@@ -67,8 +78,12 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    top: calc(50vh - 140px);
+    top: calc(400px - 140px);
     text-align: center;
+
+    @media #{$media-sm} {
+      top: 350px;
+    }
 
     .banner-indicator {
       cursor: pointer;
@@ -83,6 +98,21 @@ export default {
       &.selected {
         background-color: #fff;
       }
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0.4;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

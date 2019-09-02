@@ -1,22 +1,24 @@
 <template>
   <div class="container">
     <div id="recipes">
-      <a
-        href="#"
-        class="recipes-item"
-        v-for="(product, index) in products"
-        :key="product.id"
-        @mouseover="position = index"
-      >
-        <img
+      <div class="recipe-list">
+        <div
+          class="recipe-item"
+          v-for="(product, index) in products"
           :key="product.id"
-          :src="product.image_url"
-          :alt="product.name"
+          @mouseover="position = index"
           :class="{ selected: index === position }"
-        />
+        >
+          <img
+            class="recipe-image"
+            :key="product.id"
+            :src="product.image_url"
+            :alt="product.name"
+          />
 
-        <h1 class="recipes-title">{{ product.name }}</h1>
-      </a>
+          <h1 class="recipes-title">{{ product.name }}</h1>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -49,48 +51,60 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../styles/variables';
+
+@media #{$media-sm} {
+  .container {
+    padding: 0;
+  }
+}
+
 #recipes {
-  display: flex;
   margin: -100px 0 5rem 0;
 
-  @media (max-width: 768px) {
+  @media #{$media-sm} {
     margin-top: 0;
     overflow-x: scroll;
   }
 
-  .recipes-item {
-    position: relative;
-    color: #ddd;
-    transition: 0.3s;
+  .recipe-list {
+    display: flex;
 
-    img {
-      width: 100%;
-
-      @media (max-width: 768px) {
-        font-size: 14px;
-        height: 200px;
-        width: auto;
-      }
-      filter: grayscale(90%);
+    .recipe-item {
+      position: relative;
+      color: #ddd;
+      transition: 0.3s;
 
       &.selected {
-        filter: grayscale(0%);
+        .recipe-image {
+          filter: grayscale(0%);
+        }
       }
-    }
 
-    .recipes-title {
-      font-size: 20px;
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.56);
-    }
+      .recipe-image {
+        width: 100%;
 
-    &:hover {
-      color: #fff;
+        @media #{$media-sm} {
+          font-size: 14px;
+          width: auto;
+        }
+        filter: grayscale(90%);
+      }
+
+      .recipes-title {
+        font-size: 20px;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.56);
+      }
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

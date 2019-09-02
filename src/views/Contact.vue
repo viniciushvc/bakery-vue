@@ -54,8 +54,7 @@
 
             <Textarea
               v-model="form.message.value"
-              cols="30"
-              rows="11"
+              rows="12"
               id="message"
               title="Mensagem*"
               placeholder="Digite aqui sua mensagem..."
@@ -63,7 +62,7 @@
             />
 
             <div class="align-right">
-              <Btn type="submit" class="brown">Enviar</Btn>
+              <Btn type="submit" class="brown" title="Enviar"></Btn>
             </div>
           </div>
         </div>
@@ -76,6 +75,7 @@
 import Btn from '../components/Button'
 import Input from '../components/Input'
 import Textarea from '../components/Textarea'
+import validation from '../utils/validation'
 
 export default {
   components: {
@@ -132,22 +132,10 @@ export default {
     }
   },
   methods: {
-    checkForm: function(e) {
+    checkForm(e) {
       e.preventDefault()
 
-      Object.keys(this.form).forEach(item => {
-        const field = this.form[item]
-
-        field.errors = []
-
-        if (field.required && !field.value) {
-          field.errors.push(`O campo ${field.name} é obrigatório.`)
-        }
-
-        if (field.type === 'email' && !field.value.includes('@')) {
-          field.errors.push(`E-Mail inválido.`)
-        }
-      })
+      this.form = validation(this.form)
     },
   },
 }

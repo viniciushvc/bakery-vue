@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './styles/grid.scss';
+@import './styles/grid';
 
 html {
   box-sizing: border-box;

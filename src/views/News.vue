@@ -10,7 +10,9 @@
       </div>
     </div>
     <div class="right">
-      <btn class="link">Lista completa</btn>
+      <btn class="link" title="Lista completa">
+        <div class="arrow-right"></div>
+      </btn>
     </div>
   </div>
 </template>
@@ -44,13 +46,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../styles/variables';
+
 #news {
-  margin: 2.5rem 0;
   padding: 2.5rem 2rem;
   background-color: #fafafa;
 
-  @media (max-width: 768px) {
+  @media #{$media-sm} {
     padding: 1rem;
+    margin-top: 2.5rem;
   }
 
   .news-last {
