@@ -149,7 +149,9 @@ footer {
     }
 
     .contact-item {
-      text-align: left;
+      @media #{$media-md-max} {
+        text-align: center;
+      }
 
       @media #{$media-sm-min} {
         margin-left: 30px;
@@ -181,6 +183,7 @@ footer {
     justify-content: space-between;
 
     @media #{$media-sm-max} {
+      display: block;
       margin-top: 0;
       text-align: center;
       flex-wrap: wrap;
@@ -193,7 +196,7 @@ footer {
     }
   }
 
-  @media #{$media-sm-min} {
+  @media #{$media-md-min} {
     .border-left {
       border-left: 1px solid #867f79;
     }
