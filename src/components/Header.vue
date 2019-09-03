@@ -18,18 +18,39 @@
           </div>
         </div>
 
-        <div class="sidenav" :class="{ open: mobileMenu }">
-          <ul class="header-links">
-            <li v-scroll-to="{ el: '#home', onStart: hideMenu }">Home</li>
-            <li v-scroll-to="{ el: '#about', onStart: hideMenu }">Sobre</li>
-            <li v-scroll-to="{ el: '#recipes', onStart: hideMenu }">
+        <div class="header-sidebar" :class="{ open: mobileMenu }">
+          <ul class="sidebar-items">
+            <li
+              class="sidebar-link"
+              v-scroll-to="{ el: '#home', onStart: hideMenu }"
+            >
+              Home
+            </li>
+            <li
+              class="sidebar-link"
+              v-scroll-to="{ el: '#about', onStart: hideMenu }"
+            >
+              Sobre
+            </li>
+            <li
+              class="sidebar-link"
+              v-scroll-to="{ el: '#recipes', onStart: hideMenu }"
+            >
               Receitas
             </li>
-            <li v-scroll-to="{ el: '#news', onStart: hideMenu }">Notícias</li>
-            <li v-scroll-to="{ el: '#contacts', onStart: hideMenu }">
+            <li
+              class="sidebar-link"
+              v-scroll-to="{ el: '#news', onStart: hideMenu }"
+            >
+              Notícias
+            </li>
+            <li
+              class="sidebar-link"
+              v-scroll-to="{ el: '#contacts', onStart: hideMenu }"
+            >
               Contato
             </li>
-            <li class="links-icon">
+            <li class="sidebar-link links-icon">
               <SearchIcon color="#333" size="20" />
             </li>
           </ul>
@@ -99,8 +120,8 @@ header {
       }
     }
 
-    .header-links {
-      margin-top: 2rem;
+    .sidebar-items {
+      margin-top: 30px;
       align-self: center;
       margin-left: auto;
 
@@ -108,7 +129,7 @@ header {
         margin-top: 0;
       }
 
-      li {
+      .sidebar-link {
         cursor: pointer;
         display: inline-block;
         color: #333;
@@ -124,7 +145,7 @@ header {
 
         @media #{$media-md-max} {
           font-size: 13px;
-          padding: 5px 15px;
+          padding: 5px 10px;
         }
 
         @media #{$media-sm-max} {
@@ -200,7 +221,7 @@ header {
     }
   }
 
-  .sidenav {
+  .header-sidebar {
     @media #{$media-sm-max} {
       margin-top: 82px;
       height: 100%;
@@ -215,7 +236,7 @@ header {
       &.open {
         width: 90vw;
 
-        li {
+        .sidebar-link {
           margin-left: 1rem;
         }
       }

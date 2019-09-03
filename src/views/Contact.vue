@@ -35,14 +35,34 @@
               :errors="form.city.errors"
             />
 
-            <Input
-              v-model="form.phone.value"
-              id="phone"
-              title="Telefone*"
-              placeholder="(99) 9999-9999"
-              :errors="form.phone.errors"
-            />
+            <div class="input-group">
+              <label class="input-label" for="phone">Telefone*</label>
+
+              <input
+                class="input-field"
+                id="phone"
+                name="phone"
+                v-model="form.phone.value"
+                placeholder="(99) 9999-9999"
+                @keyup="maskPhone"
+              />
+              <ul class="input-error-list">
+                <li
+                  class="input-error-item"
+                  v-for="error in form.phone.errors"
+                  :key="error"
+                >
+                  {{ error }}
+                </li>
+
+                <li
+                  v-if="!form.phone.errors.length"
+                  class="input-error-item"
+                ></li>
+              </ul>
+            </div>
           </div>
+
           <div class="col-12 col-md-6">
             <Input
               v-model="form.subject.value"
@@ -136,6 +156,16 @@ export default {
       e.preventDefault()
 
       this.form = validation(this.form)
+    },
+    maskPhone() {
+      let val = this.form.phone.value
+
+      val = val.replace(/\D/g, '')
+      val = val.replace(/^(\d\d)(\d)/g, '($1) $2')
+      val = val.replace(/(\d{4})(\d)/, '$1-$2')
+      val = val.substring(0, 14)
+
+      this.form.phone.value = val
     },
   },
 }

@@ -49,18 +49,26 @@
         <div class="col-sm-12 col-md-6 col-lg-4 footer-contact border-left">
           <div class="contact-item">
             <MapIcon color="#675749" size="17" />
-            <strong>Contato</strong>
-            <p>(99)9999-9999 | (99)9999-9999</p>
+            <strong class="contact-title">Contato</strong>
+            <p class="contact-text">(99)9999-9999 | (99)9999-9999</p>
           </div>
 
           <div class="contact-item">
             <PhoneIcon color="#675749" size="15" />
-            <strong>Localização</strong>
-            <p>Nam porttitor diam in eleifend fringilla, 3180</p>
+            <strong class="contact-title">Localização</strong>
+            <p class="contact-text">
+              Nam porttitor diam in eleifend fringilla, 3180
+            </p>
           </div>
         </div>
       </div>
-      <p class="copyright">&copy; Bakery 2017. Todos direitos reservados.</p>
+      <p class="copyright">
+        &copy; Bakery 2017. Todos direitos reservados.
+
+        <a href="https://github.com/viniciushvc" target="_blank">
+          <img src="../assets/images/ow.png" alt="Vinicius Vicentini" />
+        </a>
+      </p>
     </div>
   </footer>
 </template>
@@ -109,7 +117,7 @@ footer {
       }
     }
   }
-  @media #{$media-md-max} {
+  @media #{$media-lg-max} {
     .d-only {
       display: none;
     }
@@ -147,17 +155,18 @@ footer {
         margin-left: 30px;
       }
 
+      // icon
       span {
         margin-right: 10px;
         position: relative;
         top: 5px;
       }
 
-      strong {
+      .contact-title {
         text-transform: uppercase;
       }
 
-      p {
+      .contact-text {
         margin-top: 7px;
         margin-bottom: 50px;
         margin-left: 25px;
@@ -168,9 +177,19 @@ footer {
   .copyright {
     font-size: 12px;
     margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
 
     @media #{$media-sm-max} {
+      margin-top: 0;
       text-align: center;
+      flex-wrap: wrap;
+
+      a {
+        margin-top: 30px;
+        display: block;
+        width: 100%;
+      }
     }
   }
 

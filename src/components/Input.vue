@@ -54,4 +54,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="../styles/form.scss" />
+<style lang="scss" src="../styles/form.scss" />

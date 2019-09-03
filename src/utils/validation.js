@@ -9,7 +9,13 @@ const validation = form => {
     }
 
     if (field.type === 'email' && !field.value.includes('@')) {
-      field.errors.push(`E-Mail inválido.`)
+      field.errors.push(`${field.name} inválido.`)
+    }
+
+    if (field.type === 'phone' && field.value.length !== 14) {
+      console.log(field.length)
+
+      field.errors.push(`${field.name} inválido.`)
     }
   })
 

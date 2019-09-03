@@ -10,6 +10,7 @@
             :key="partner.id"
           >
             <img
+              class="partners-image"
               v-if="index < 5"
               :key="partner.id"
               :src="partner.image_url"
@@ -39,25 +40,28 @@ export default {
 <style scoped lang="scss">
 .partners {
   background-color: #f4f4f4;
-  margin: 2.5rem 0;
-  padding: 2.5rem 0;
+  margin: 30px 0;
+  padding: 30px 0;
 
   .partners-title {
     text-transform: uppercase;
     color: #403225;
     font-size: 18px;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
   }
 
   .partners-list {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
   .partners-item {
     list-style-type: none;
     align-self: center;
-    margin: 0 5rem;
+
+    .partners-image {
+      margin: 0 40px;
+    }
   }
 }
 </style>
