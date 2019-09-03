@@ -65,7 +65,11 @@
       <p class="copyright">
         &copy; Bakery 2017. Todos direitos reservados.
 
-        <a href="https://github.com/viniciushvc" target="_blank">
+        <a
+          class="copyright-link"
+          href="https://github.com/viniciushvc"
+          target="_blank"
+        >
           <img src="../assets/images/ow.png" alt="Vinicius Vicentini" />
         </a>
       </p>
@@ -188,7 +192,7 @@ footer {
       text-align: center;
       flex-wrap: wrap;
 
-      a {
+      .copyright-link {
         margin-top: 30px;
         display: block;
         width: 100%;

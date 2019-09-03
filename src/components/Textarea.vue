@@ -11,7 +11,8 @@
       v-model="content"
       @input="handleInput"
       :placeholder="placeholder"
-    ></textarea>
+    >
+    </textarea>
     <ul class="input-error-list">
       <li class="input-error-item" v-for="error in errors" :key="error">
         {{ error }}

@@ -161,6 +161,8 @@ header {
       .links-icon {
         border-left: 1px solid #a8a8a8;
         position: relative;
+
+        // icon
         span {
           top: 2px;
         }
